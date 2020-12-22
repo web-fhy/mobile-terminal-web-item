@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 100%;
+				
+			}
+			.box>.div{
+				width: 97%;
+				height: 0.14rem;
+				display: flex;
+				margin: 0 auto;
+			}
+			.box>.div>img{
+				width: 100%;
+			}
+			.top{
+				width: 100%;
+				height: 0.46rem;
+				display: flex;
+				align-items: center;
+			}
+			.top>ul{
+				width: 100%;
+				height: 0.46rem;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			.top>ul>li{
+				display: flex;
+			}
+			.top>ul>li:nth-child(1){
+				width: 0.3rem;
+				height: 0.3rem;
+			}
+			.top>ul>li:nth-child(1)>img{
+				width: 0.3rem;
+				height: 0.3rem;
+			}
+			.top>ul>li:nth-child(2){
+				width: 2.90rem;
+				height: 0.3rem;
+				position: relative;
+			}
+			.top>ul>li:nth-child(2)>img{
+				width: 0.16rem;
+				height: 0.16rem;
+				position: absolute;
+				top: 0.08rem;
+				left: 0.12rem;
+			}
+			.top>ul>li:nth-child(2)>input{
+				width: 2.50rem;
+				height: 0.3rem;
+				border: none;
+				font-size: 0.1rem;
+				padding-left: 0.4rem;
+				border-radius: 0.15rem;
+				background: #f5f5f5;
+			}
+			.top>ul>li:nth-child(3){
+				width: 0.24rem;
+				height: 0.3rem;
+			}
+			.top>ul>li:nth-child(3)>img{
+				width: 0.24rem;
+				height: 0.3rem;
+			}
+			.cai{
+				width: 100%;
+				height: 0.58rem;
+				background: black;
+			}
+			.cai>ul{
+				width: 100%;
+				height: 0.58rem;
+				display: flex;
+				justify-content: space-between;
+				
+			}
+			.cai a{
+				color: white;
+			}
+			.cai>ul>li{
+				width: 20%;
+				height: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				font-size: 0.1rem;
+				
+			}
+			.cai>ul>li>p{
+				width: 100%;
+				color: white;
+			}
+			.cai>ul>li>p:nth-child(1){
+				display: flex;
+				height: 60%;
+				align-items: center;
+				justify-content: center;
+			}
+			.cai>ul>li>p:nth-child(1)>img{
+				width: 0.22rem;
+				height: 0.22rem;
+			}
+			.cai>ul>li>p:nth-child(2){
+				text-align: center;
+			}
+			.lun{
+				width: 100%;
+				height: 1.32rem;
+				/* background: url(img/首页图标/banner.jpg) no-repeat;
+				background-size: 100% 100%; */
+			}
+			.lan{
+				width: 100%;
+			}
+			.lan_top{
+				width: 90%;
+				margin: 0 auto;
+			}
+			.lan_top>p{
+				width: 52%;
+				height: 0.45rem;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.lan_top>p>span{
+				display: flex;
+				line-height: 0.2rem;
+			}
+			.lan_top>p>span>img{
+				width: 0.2rem;
+				height: 0.2rem;
+			}
+			.lan_top>p>span:nth-child(2){
+				color: #2dd7a8;
+				font-size: 0.15rem;
+				font-weight: bold;
+			}
+			.lan_top>p>span:nth-child(3){
+				color: #999999;
+				font-size: 0.12rem;
+			}
+			.lan_top>div{
+				width: 100%;
+				height: 1.96rem;
+				display: flex;
+				box-shadow: 0 0.05rem 0.1rem #e3e2e2;
+			}
+			.lan_top>div>ul:nth-child(1){
+				width: 1.4rem;
+				height: 1.96rem;
+				background: #fc8d56;
+				overflow: hidden;
+			}
+			.lan_top>div>ul:nth-child(1)>li{
+				color: white;
+				font-size: 0.12rem;
+				padding-left: 0.15rem;
+			}
+			.lan_top>div>ul:nth-child(1)>li:first-child{
+				font-size: 0.15rem;
+				margin-top: 0.1rem;
+			}
+			.lan_top>div>ul:nth-child(1)>li:nth-child(2){
+				font-size: 0.15rem;
+			}
+			.lan_top>div>ul:nth-child(1)>li:last-child{
+				width: 0.97rem;
+				height: 0.97rem;
+				background: white;
+				margin-left: 0.15rem;
+				padding: 0;
+				background-size: 100% 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+			}
+			.lan_top>div>ul:nth-child(1)>li:last-child>.a{
+				width: 0.1rem;
+				height: 0.85rem;
+				position: absolute;
+				background: white;
+				bottom: 0;
+				right: -0.1rem;
+				opacity: 0.6;
+			}
+			.lan_top>div>ul:nth-child(1)>li:last-child>.b{
+				width: 0.2rem;
+				height: 0.75rem;
+				position: absolute;
+				background: white;
+				bottom: 0;
+				right: -0.2rem;
+				opacity: 0.6;
+			}
+			.lan_top>div>ul:nth-child(1)>li:last-child>img{
+				width: 0.80rem;
+				height: 0.67rem;
+			}
+			.lan_top>div>ul:nth-child(1)>li:last-child>span:last-child{
+				width: 0.60rem;
+				height: 0.18rem;
+				background: red;
+				border-radius: 0.9rem;
+				text-align: center;
+				line-height: 0.18rem;
+				position: absolute;
+				bottom: 0.05rem;
+				left: 0.07rem;
+				font-size: 0.1rem;
+			}
+			.lan_top>div>ul:nth-child(2){
+				width: 1.92rem;
+				height: 100%;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.lan_top>div>ul:nth-child(2)>li:first-child{
+				width: 100%;
+				height: 45%;
+			}
+			.lan_top>div>ul:nth-child(2)>li{
+				width: 49%;
+				height: 55%;
+				
+			}
+			.lan_top>div>ul:nth-child(2)>li:first-child{
+				display: flex;
+				border-bottom: 1px solid #efefef;
+			}
+			.lan_top>div>ul:nth-child(2)>li:first-child>p{
+				width: 50%;
+				overflow: hidden;
+			}
+			.lan_top>div>ul:nth-child(2)>li:first-child>p:nth-child(1)>span{
+				display: block;
+				padding-left: 0.15rem;
+			}
+			.lan_top>div>ul:nth-child(2)>li:first-child>p:nth-child(1)>span:nth-child(1){
+				font-size: 0.15rem;
+				color: #9f7c38;
+				margin-top: 0.1rem;
+			}
+			.lan_top>div>ul:nth-child(2)>li:first-child>p:nth-child(1)>span:nth-child(2){
+				font-size: 0.12rem;
+				color: #666666;
+			}
+			.lan_top>div>ul:nth-child(2)>li:first-child>p:nth-child(1)>span:nth-child(3){
+				font-size: 0.12rem;
+				color: #fb8e56;
+				width: 0.7rem;
+				height: 0.18rem;
+				border: 1px solid #fb8e56;
+				padding: 0;
+				margin-left: 0.15rem;
+				border-radius: 0.9rem;
+				text-align: center;
+				line-height: 0.18rem;
+			}
+			.lan_top>div>ul:nth-child(2)>li:first-child>p:nth-child(2){
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.lan_top>div>ul:nth-child(2)>li:first-child>p>img{
+				width: 0.7rem;
+				height: 0.47rem;
+			}
+			.lan_top>div>ul:nth-child(2)>li:nth-child(2){
+				border-right: 1px solid #efefef;
+			}
+			.lan_top>div>ul:nth-child(2)>.li>p{
+				padding-left: 0.15rem;
+			}
+			.lan_top>div>ul:nth-child(2)>.li>p:nth-child(1){
+				color: #d3396b;
+				font-size: 0.15rem;
+				margin-top: 0.1rem;
+			}
+			.lan_top>div>ul:nth-child(2)>.li>p:nth-child(2){
+				color: #676767;
+				font-size: 0.12rem;
+			}
+			.lan_top>div>ul:nth-child(2)>.li>p:nth-child(3){
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.lan_top>div>ul:nth-child(2)>.li>p:nth-child(3)>img{
+				width: 0.48rem;
+				height: 0.45rem;
+			}
+			.fen{
+				width: 100%;
+				height: 0.15rem;
+				background: #f2f2f2;
+				margin-top: 0.2rem;
+			}
+			.lan_bot{
+				width: 100%;
+				margin-bottom: 0.4rem;
+			}
+			.lan_bot>div{
+				width: 90%;
+				margin: 0 auto;
+	   		 	
+			}
+			.lan_bot>div>p{
+				width: 52%;
+				height: 0.45rem;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.lan_bot>div>p>span{
+				display: flex;
+				line-height: 0.2rem;
+			}
+			.lan_bot>div>p>span>img{
+				width: 0.2rem;
+				height: 0.2rem;
+			}
+			.lan_bot>div>p>span:nth-child(2){
+				color: #2dd7a8;
+				font-size: 0.15rem;
+				font-weight: bold;
+			}
+			.lan_bot>div>p>span:nth-child(3){
+				color: #999999;
+				font-size: 0.12rem;
+			}
+			.lan_bot>ul{
+				width: 100%;
+				height: 1.94rem;
+				display: flex;
+				border-top: 1px solid #efefef;
+			}
+			.lan_bot>ul>li{
+				width: 1.24rem;
+				height: 100%;
+				margin-left: 0.15rem;
+				border-right:  1px solid #efefef;
+				
+			}
+			.lan_bot>ul>li:last-child{
+				border: none;
+			}
+			.lan_bot>ul>li>p{
+				
+			}
+			.lan_bot>ul>li>p:nth-child(1){
+				color: black;
+				font-size: 0.15rem;
+				font-weight: bold;
+				margin-top: 0.2rem;
+			}
+			.lan_bot>ul>li>p:nth-child(2){
+				color: #999999;
+				font-size: 0.15rem;
+				font-weight: bold;
+			}
+			.lan_bot>ul>li>p:nth-child(3){
+				width: 0.90rem;
+				height: 1rem;
+				display: flex;
+				align-items: center;
+			}
+			.lan_bot>ul>li>p:nth-child(3)>img{
+				width: 0.87rem;
+				height: 0.72rem;
+			}
+			.lan_bot>ul>li>p:nth-child(4){
+				color: #2dd1a8;
+				font-size: 0.15rem;
+				font-weight: bold;
+			}
+			/* .swiper-container{
+				width: 100%;
+				height: 100%;
+			}
+			.swiper-wrapper{
+				width: 100%;
+				height: 100%;
+			} */
+			.swiper-slide{
+				width: 100%;
+				height: 1.32rem;
+				background: url(img/shouyetubiao/banner.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			.swiper-slide>p{
+				margin-left: 0.2rem;
+				font-size: 0.15rem;
+				color: black;
+			}
+			.swiper-slide>p:first-child{
+				margin-top: 0.2rem;
+			}
+			.swiper-slide>p:nth-child(2){
+				font-size: 0.20rem;
+				color: black;
+				font-weight: bold;
+			}
+			.swiper-pagination{
+				top: 0.1rem;
+			}
+			.swiper-pagination span{
+				width: 0.2rem;
+				height: 0.03rem !important;
+				border-radius: 0;
+			}
+			.di{
+				width: 100%;
+				position: fixed;
+				bottom: 0;
+				background: white;
+			}
+			.di>div{
+				width: 100%;
+				height: 0.4rem;
+			}
+			.di>div>ul{
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: space-around;
+			}
+			.di>div>ul>li{
+				width: 25%;
+				height: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+			}
+			.di>div>ul>li>p{
+				width: 100%;
+				text-align: center;
+				font-size: 0.1rem;
+			}
+			.di>div>ul>li>p>img{
+				width: 0.22rem;
+				height: 0.22rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<!--<div class="div"><img src="img/shouyetubiao/zhuangtailan.png" ></div>-->
+			<div class="top">
+				<ul>
+					<li><img src="img/shouyetubiao/logo-.png" ></li>
+					<li><img src="img/shouyetubiao/sousuodefuben.png" ><input type="text" name="" id="" value="" /></li>
+					<li><img src="img/fenleitupian/shouye_03.png" ></li>
+				</ul>
+			</div>
+			<div class="cai">
+				<ul>
+					<li>
+						<p><img src="img/shouyetubiao/jingxuanbiao.png" ></p>
+						<p>精选</p>
+					</li>
+					<li>
+						<p><img src="img/shouyetubiao/xinxianshuiguo.png" ></p>
+						<p>水果</p>
+					</li>
+					<li>
+						<p><img src="img/shouyetubiao/shengxian-shucai.png" ></p>
+						<p>蔬菜</p>
+					</li>
+					<li>
+						<p><img src="img/shouyetubiao/haixian.png" ></p>
+						<p>海鲜</p>
+					</li>
+					<li>
+						<p><img src="img/shouyetubiao/dianpujingxuan.png" ></p>
+						<p><a href="shang.html">商家</a></p>
+					</li>
+				</ul>
+			</div>
+			<div class="lun">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide a">
+							<p>#有机蔬菜#</p>
+							<p>喜欢吃的就是这么简单</p>
+							<p>吃的是清脆的感觉</p>
+						</div>
+						<div class="swiper-slide b">
+							<p>#有机蔬菜#</p>
+							<p>喜欢吃的就是这么简单</p>
+							<p>吃的是清脆的感觉</p>
+						</div>
+						<div class="swiper-slide c">
+							<p>#有机蔬菜#</p>
+							<p>喜欢吃的就是这么简单</p>
+							<p>吃的是清脆的感觉</p>
+						</div>
+						<div class="swiper-slide d">
+							<p>#有机蔬菜#</p>
+							<p>喜欢吃的就是这么简单</p>
+							<p>吃的是清脆的感觉</p>
+						</div>
+						<div class="swiper-slide e">
+							<p>#有机蔬菜#</p>
+							<p>喜欢吃的就是这么简单</p>
+							<p>吃的是清脆的感觉</p>
+						</div>
+					</div>
+					<div class="swiper-pagination"></div> <!-- 分页器 -->
+				</div>
+			</div>
+			<div class="lan">
+				<div class="lan_top">
+					<p>
+						<span><img src="img/shouyetubiao/remai.png" ></span>
+						<span>今日推荐</span>
+						<span>精选商品抢购中</span>
+					</p>
+					<div>
+						<ul>
+							<li>超值专区抢购</li>
+							<li>—</li>
+							<li>最低10元起</li>
+							<li>领券满99减20</li>
+							<li>
+								<span class="a"></span>
+								<span class="b"></span>
+								<img src="./img/shouyetubiao/caomei.png" >
+								<span>19.8元起</span>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<p>
+									<span>农产品直营</span>
+									<span>官方采购</span>
+									<span>满99减20</span>
+								</p>
+								<p><img src="img/shouyetubiao/nihoutao.png" ></p>
+							</li>
+							<li class="li">
+								<p>生鲜旺季</p>
+								<p>满满的幸福</p>
+								<p><img src="img/shouyetubiao/huolongguo.png" ></p>
+							</li>
+							<li class="li">
+								<p style="color: #fb8c57;">超值优惠</p>
+								<p>先领劵再购物</p>
+								<p><img src="img/shouyetubiao/chengzi-kaobei.png" ></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="fen"></div>
+				<div class="lan_bot">
+					<div>
+						<p>
+							<span><img src="img/shouyetubiao/lingshouliang.png" ></span>
+							<span>新品上线</span>
+							<span>精选商品抢购中</span>
+						</p>
+					</div>
+					<ul>
+						<li>
+							<p>传奇香橙</p>
+							<p>清香型水果</p>
+							<p><img src="img/shouyetubiao/chengzi-kaobei.png" ></p>
+							<p>￥29.00起</p>
+						</li>
+						<li>
+							<p>草莓多多</p>
+							<p>诱人型水果</p>
+							<p><img src="img/shouyetubiao/caomei-kaobei.png" ></p>
+							<p>￥29.00起</p>
+						</li>
+						<li>
+							<p>甜柠檬</p>
+							<p>甜的不可思议</p>
+							<p><img src="img/shouyetubiao/ningmeng.png" ></p>
+							<p>￥39.00起</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="di">
+				<div>
+					<ul>
+						<li>
+							<p><img src="img/footer/gouwudai11.png" ></p>
+							<p><a href="index.html" style="color: #24E2B1;">首页</a></p>
+						</li>
+						<li>
+							<p><img src="img/footer/qita.png" ></p>
+							<p><a href="class.html">分类</a></p>
+						</li>
+						<li>
+							<p><img src="img/footer/gouwucheman.png" ></p>
+							<p><a href="shopcar.html">购物车</a></p>
+						</li>
+						<li>
+							<p><img src="img/footer/dengluyonghuming (1).png" ></p>
+							<p><a href="myself.html">我的</a></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.swiper-container',{
+			// autoplay:true
+			pagination: {
+			    el: '.swiper-pagination',//添加分页器
+				clickable :true,
+			  },
+			  autoplay:true,//自动播放
+			  loop:true,//循环播放
+			  // mousewheel: true,
+			  
+		})
+	</script>
+</html>

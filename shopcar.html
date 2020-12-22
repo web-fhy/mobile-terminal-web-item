@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/xiangmu/shopcar.css"/>
+	</head>
+	<body>
+		<div class="box">
+			<div class="top">
+				<p><a href="index.html"><img src="img/fenleitupian/zuo-(2).png" ></a></p>
+				<p>美食购物车</p>
+				<p>编辑</p>
+			</div>
+			<div class="lie">
+				<div>
+					<p><input type="checkbox" name="" id="" value="" class="all inp"/> <span>百香果</span></p>
+					<ul>
+						<li><input type="checkbox" name="" id="" value="" class="inp inp1"/></li>
+						<li><img src="img/IMG_4629_03.png" ></li>
+						<li>
+							<p>百香果PAGGODA【1KG】</p>
+							<p>【1KG】a=A级-三红蜜柚（中）超重</p>
+							<p>周一至周日，免预约</p>
+							<p>
+								￥<span class="sppan">8.9</span>
+								<span>￥32.9</span>
+								<span>4.38折</span>
+							</p>
+							<ul class="math">
+								<li class="jian">-</li>
+								<li class="num">0</li>
+								<li class="jia">+</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li><input type="checkbox" name="" id="" value="" class="inp inp1"/></li>
+						<li><img src="img/IMG_4629_06.png" ></li>
+						<li>
+							<p>百香果PAGGODA【500g】</p>
+							<p>【1KG】a=A级-三红蜜柚（中）超重</p>
+							<p>周一至周日，免预约</p>
+							<p>
+								￥<span class="sppan">15.9</span>
+								<span>￥32.9</span>
+								<span>4.83折</span>
+							</p>
+							<ul class="math">
+								<li class="jian">-</li>
+								<li class="num">0</li>
+								<li class="jia">+</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<ul>
+						<li><input type="checkbox" name="" id="" value="" class="inp"/></li>
+						<li><img src="img/IMG_4629_08.png" ></li>
+						<li>
+							<p>大山果业脆冬枣</p>
+							<p>脆冬枣，服务流程/时长：咨询商家</p>
+							<p>周一至周日，免预约</p>
+							<p>
+								￥<span class="sppan">13.8</span>
+								<span>￥16.8</span>
+								<span>8.21折</span>
+							</p>
+							<ul class="math">
+								<li class="jian">-</li>
+								<li class="num">0</li>
+								<li class="jia">+</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="jie">
+				<p><input type="checkbox" name="" id="" value="" class="All"/> <span style="margin-left: 0.05rem;">全选</span></p>
+				<p>合计<span>￥</span><span class="spppa">0</span></p>
+				<p>结算(<span>2</span>)</p>
+			</div>
+		</div>
+	</body>
+	<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		Zepto(function($){
+			var index=0;
+//			for(var i=0;i<3;i++){
+			$('.All').click(function(){
+				  $(".inp").prop("checked", this.checked);  
+				  console.log(this.checked)
+				  
+				  if(this.checked==true){
+//				  	alert('a')
+				  }
+			})
+			$('.all').click(function(){
+				  $(".inp1").prop("checked", this.checked);  
+				  console.log(this.checked)
+				  
+				  if(this.checked==true){
+//				  	alert('a')
+				  }
+			})
+				$('.jia').click(function(){
+					var c=$('.spppa').html();
+					index=$(this).siblings('.num').html()
+					index++
+					$(this).siblings('.num').html(index)
+					console.log(index)
+					console.log($(this).siblings('.num').html())
+					var b=$(this).parent().siblings().find('.sppan').html()
+					console.log(b)
+//					var d=b
+//					var e=b.toFixed(2)
+					var s=parseFloat(b)+parseFloat(c);
+					var v=s.toFixed(2)
+					console.log(c)
+					$('.spppa').html(v);
+				})
+				$('.jian').click(function(){
+					var c=$('.spppa').html();
+					index=$(this).siblings('.num').html()
+					index--
+					$(this).siblings('.num').html(index)
+					console.log(index)
+					console.log($(this).siblings('.num').html())
+					var b=$(this).parent().siblings().find('.sppan').html()
+					console.log(b)
+					console.log(c)
+					var s=parseFloat(c)-parseFloat(b);
+					var v=s.toFixed(2)
+					console.log(c)
+					$('.spppa').html(v);
+					if($(this).siblings('.num').html()<=0){
+						alert('不能再减l')
+						$(this).siblings('.num').html(0)
+//						break
+					}
+				})
+//			}
+			
+			
+		})
+	</script>
+</html>
